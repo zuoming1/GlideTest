@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.bitmap.CircleCrop;
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 import com.bumptech.glide.request.RequestOptions;
 import com.bumptech.glide.request.transition.DrawableCrossFadeFactory;
@@ -32,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
                 .load("http://39.103.216.115:8081/music/1.png")
                 .apply(requestOptions)
                 .transition(DrawableTransitionOptions.withCrossFade(3000))
+                .transform(new CircleCrop())
                 .into(IImageView);
 
     }
